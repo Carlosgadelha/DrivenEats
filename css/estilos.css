@@ -1,3 +1,6 @@
+*{
+   box-sizing: border-box;
+}
 header{
     background-color: #CF2B2B;
     width: 414px;
@@ -86,9 +89,8 @@ footer{
     position: fixed;
     left: 0px;
     bottom: 0px;
-    background-color: green;
-    /* background: #FFFFFF; */
-
+    background-color: rgba(255, 255, 255, 1);
+    
 }
 
 footer div{
