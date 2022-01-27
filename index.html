@@ -19,8 +19,8 @@
     <main>
         <section>
             <h2> Primeiro, seu prato </h2>
-            <div class="produtos">
-                <div class="produto">
+            <div class="produtos" id="pratos">
+                <div class="produto" id="prato01" onclick="selecaoPrato(id)">
                     <div>
                         <img src="./imagens/frango_yin_yang 1.png" all="frango">
                         <p>Coquinha gelada</p>
@@ -30,7 +30,7 @@
                     
                 </div>
 
-                <div class="produto">
+                <div class="produto" id="prato02" onclick="selecaoPrato(id)" >
                     <div>
                         <img src="./imagens/frango_yin_yang 1.png" all="frango">
                         <p>Coquinha gelada</p>
@@ -40,8 +40,8 @@
                     
                 </div>
 
-                <div class="produto">
-                    <div>
+                <div class="produto" id="prato03" onclick="selecaoPrato(id)">
+                    <div onclick="selecaoPrato()">
                         <img src="./imagens/frango_yin_yang 1.png" all="frango">
                         <p>Coquinha gelada</p>
                         <p>Lata 350mlLata 350ml</p>
@@ -136,6 +136,8 @@
         </div>
         
     </footer>
+
+    <script src="script.js"></script>
     
 </body>
 </html>
