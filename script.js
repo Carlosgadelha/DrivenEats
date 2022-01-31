@@ -1,104 +1,82 @@
-// function selecionarItem(item, tipoProduto){
+let msg = ""
 
-//     const produto = document.querySelector('.'+ tipoProduto + '.selecionado');
+function selecionarItem(tipoProduto, item){
 
-//     if (produto != null){
-//         produto.classList.remove('selecionado')
-//     } else{
-//         document.querySelector('.'+ tipoProduto + '.selecionado')
+    const itemSelecionado = document.querySelector(tipoProduto +' .selecionado')
+    
+    if (itemSelecionado != null){
+        itemSelecionado.classList.remove('selecionado')
+        const produto = document.querySelector(item);
+        produto.classList.add("selecionado")
+    
+    }{
+        const produto = document.querySelector(item);
+        produto.classList.add("selecionado")
+    } 
+       
+    ativarBotaoPrdido()
+ } 
 
-//     }
+ function enviarPedido(){
 
-// }
-
-
-function selecionar(item, id){
-
-    if (item != null){
-        document.getElementById(item).style.border = "none";
-        document.getElementById(id).style.border = "5px solid green";
-        
-    }else{
-        document.getElementById(id).style.border = "5px solid green";
+    let botaoAtivado = document.querySelector('.confirmarPedido')
+    if( botaoAtivado != null){
+        window.open("https://wa.me/55088994786814?text="+msg )
 
     }
 
-    // return item
-
-}
-
-function elementoSelecionado(produto){
-    const produtos = document.getElementById(produto).children
-    for( let i  = 0; i < produtos.length; i++ ){
-        let id = produtos[i].getAttribute("id");
-        let borda = document.getElementById(id).getAttribute("style");
+    
+ }
 
 
-        if( borda === "border: 5px solid green;"){
-          return id;
-        }
-    }
+ function ativarBotaoPrdido(){
 
-}
-
-function selecaoPrato(id){
-
-    let itemSelecionado = elementoSelecionado("pratos")
-    selecionar(itemSelecionado, id)
-    ativarBotaoPrdido()
-
-}
-
-function selecaoBebida(id){
-
-    let itemSelecionado = elementoSelecionado("bebidas")
-    selecionar(itemSelecionado, id)
-    ativarBotaoPrdido()
-
-}
-
-function selecaoSobremesa(id){
-
-    let itemSelecionado = elementoSelecionado("sobremesas")
-    selecionar(itemSelecionado, id)
-    ativarBotaoPrdido()
-
-}
-
-function ativarBotaoPrdido(){
     let text = ""
-    let itemSelecionadoPrato = elementoSelecionado("pratos")
-    let itemSelecionadoBebida = elementoSelecionado("bebidas")
-    let itemSelecionadoSobremesa = elementoSelecionado("sobremesas")
+    let itemSelecionadoPrato = document.querySelector('.pratos' +' .selecionado') 
+    let itemSelecionadoBebida = document.querySelector('.bebidas' +' .selecionado') 
+    let itemSelecionadoSobremesa = document.querySelector('.sobremesas' +' .selecionado') 
     
-    
-    // console.log(preco);
+    //console.log(itemSelecionadoPrato.querySelector('.nome').innerHTML)
 
     if(itemSelecionadoPrato != null && itemSelecionadoBebida != null && itemSelecionadoSobremesa != null){
-        document.getElementById("pedido").style.backgroundColor = "rgba(50, 183, 47, 1)";
+        let botao = document.querySelector('.pedido')
+        botao.innerHTML= "Fechar pedido"
+        botao.classList.add("confirmarPedido")
 
-        // console.log( document.getElementById(itemSelecionadoPrato ).children[0].children[3].innerHTML)
 
-        let {nomePrato, precoPrato} = obterNomePreco(itemSelecionadoPrato)
-        let {nomeBebida, precoBebida} = obterNomePreco(itemSelecionadoBebida)
-        let {nomeSobremesa, precoSobremesa} = obterNomePreco(itemSelecionadoSobremesa)
-         
-        console.log(nomeBebida)
-        // text = `${nomePrato}   ${precoPrato}  `
-        // console.log(text)
+        let [nomePrato, precoPrato] = obterNomePreco(itemSelecionadoPrato)
+        let [nomeBebida, precoBebida] = obterNomePreco(itemSelecionadoBebida)
+        let [nomeSobremesa, precoSobremesa] = obterNomePreco(itemSelecionadoSobremesa)
+
+
+        
+        let total = precoPrato + precoBebida + precoSobremesa
+
+        text = `Olá, gostaria de fazer o pedido:
+        - Prato: ${nomePrato}
+        - Bebida: ${nomeBebida}
+        - Sobremesa: ${nomeSobremesa}
+        Total: R$ ${total.toFixed(2)}`
+
+        msg = encodeURIComponent(text)
+
     }
  
 }
 
 function obterNomePreco(itemSelecionado){
 
-    let nome = document.getElementById(itemSelecionado).children[0].children[1].innerHTML
+    let nome = itemSelecionado.querySelector('.nome').innerHTML
     
-    let preco = document.getElementById(itemSelecionado).children[0].children[3].innerHTML
-    
+    let preco = itemSelecionado.querySelector('.preco').innerHTML
+        preco = preco.replace('R$','')
+        preco = preco.replace(',','.')
 
-    return {nome, preco}
+    let precoFormatado = parseFloat(preco)
+        
+    
+    return [nome, precoFormatado]
 }
-
+    
 
 
