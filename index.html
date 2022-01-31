@@ -17,30 +17,30 @@
         <p>Sua comida em 6 minutos</p>
     </header>
     <main>
-        <section >
+        <section class="itens">
             <h2> Primeiro, seu prato </h2>
             <div class=" produtos pratos" data-identifier="dishes">
                 <div class=" produto prato01" onclick="selecionarItem('.pratos', '.prato01') " data-identifier="food-option">
                     <div class="infoProduto">
                         <img src="./imagens/frango_yin_yang 1.png" all="frango">
-                        <p class="nome" data-identifier="food-title" >Coquinha gelada</p >
-                        <p class="descricao">Lata 350mlLata 350ml</p>
-                        <p class="preco" data-identifier="food-price">R$ 4,90</p>
+                        <p class="nome" data-identifier="food-title" >Frango Yin Yang</p >
+                        <p class="descricao">Um pouco de batata, um pouco de salada</p>
+                        <p class="preco" data-identifier="food-price">R$ 14,90</p>
                         
                     </div>
-                    <div class="iconSelecionado">
+                    <!--<div class="iconSelecionado">
                         <ion-icon name="checkmark-circle"></ion-icon>                  
                      </div>
-                    
+                    -->
                     
                 </div>
 
                 <div class=" produto prato02" onclick="selecionarItem('.pratos', '.prato02')" data-identifier="food-option" >
                     <div class="infoProduto">
                         <img src="./imagens/frango_yin_yang 1.png" all="frango">
-                        <p class="nome" data-identifier="food-title" >Coquinha gelada</p >
-                        <p class="descricao">Lata 350mlLata 350ml</p>
-                        <p class="preco" data-identifier="food-price">R$ 4,90</p>
+                        <p class="nome" data-identifier="food-title" >Frango Yin Yang</p >
+                        <p class="descricao">Um pouco de batata, um pouco de salada</p>
+                        <p class="preco" data-identifier="food-price">R$ 14,90</p>
                     </div>
                     
                 </div>
@@ -48,9 +48,9 @@
                 <div class=" produto prato03" onclick="selecionarItem('.pratos', '.prato03')" data-identifier="food-option">
                     <div class="infoProduto">
                         <img src="./imagens/frango_yin_yang 1.png" all="frango">
-                        <p class="nome" data-identifier="food-title">Coquinha gelada</p >
-                        <p class="descricao">Lata 350mlLata 350ml</p>
-                        <p class="preco" data-identifier="food-price">R$ 4,90</p>
+                        <p class="nome" data-identifier="food-title">Frango Yin Yang</p >
+                        <p class="descricao">Um pouco de batata, um pouco de salada</p>
+                        <p class="preco" data-identifier="food-price">R$ 14,90</p>
                     </div>
                     
                 </div>
@@ -62,7 +62,7 @@
         
         </section>
 
-        <section>
+        <section class="itens">
             <h2> Agora, sua bebida </h2>
             <div class="produtos bebidas" data-identifier="drinks">
                 <div class=" produto bebida01" onclick="selecionarItem('.bebidas', '.bebida01')" data-identifier="food-option">
@@ -99,15 +99,15 @@
         
         </section>
 
-        <section>
+        <section class="itens">
             <h2> Por fim, sua sobremesa </h2>
             <div class="produtos sobremesas" data-identifier="desserts">
                 <div class=" produto sobremesa01" onclick="selecionarItem('.sobremesas', '.sobremesa01')" data-identifier="food-option">
                     <div class="infoProduto">
                         <img src="./imagens/pudim 1.png" all="pudim">
-                        <p class="nome" data-identifier="food-title">Coquinha gelada</p>
-                        <p class="descricao">Lata 350mlLata 350ml</p>
-                        <p class="preco" data-identifier="food-price">R$ 4,90</p>
+                        <p class="nome" data-identifier="food-title">Pudim</p>
+                        <p class="descricao">Apenas pudim</p>
+                        <p class="preco" data-identifier="food-price">R$ 7,90</p>
                     </div>
                     
                 </div>
@@ -115,9 +115,9 @@
                 <div class=" produto sobremesa02" onclick="selecionarItem('.sobremesas', '.sobremesa02')" data-identifier="food-option">
                     <div class="infoProduto">
                         <img src="./imagens/pudim 1.png" all="pudim">
-                        <p class="nome" data-identifier="food-title" >Coquinha gelada</p>
-                        <p class="descricao">Lata 350mlLata 350ml</p>
-                        <p class="preco" data-identifier="food-price">R$ 4,90</p>
+                        <p class="nome" data-identifier="food-title" >Pudim</p>
+                        <p class="descricao">Apenas pudim</p>
+                        <p class="preco" data-identifier="food-price">R$ 7,90</p>
                     </div>
                     
                 </div>
@@ -125,9 +125,9 @@
                 <div class=" produto sobremesa03" onclick="selecionarItem('.sobremesas', '.sobremesa03')" data-identifier="food-option">
                     <div class="infoProduto">
                         <img src="./imagens/pudim 1.png" all="pudim">
-                        <p class="nome" data-identifier="food-title">Coquinha gelada</p>
-                        <p class="descricao">Lata 350mlLata 350ml</p>
-                        <p class="preco" data-identifier="food-price">R$ 4,90</p>
+                        <p class="nome" data-identifier="food-title">Pudim</p>
+                        <p class="descricao">Apenas pudim</p>
+                        <p class="preco" data-identifier="food-price">R$ 7,90</p>
                     </div>
                     
                 </div>
@@ -136,9 +136,41 @@
         
         </section>
 
+        <section class="fundoTela escondido" >
+            <div class="telaConfirmarPedido" data-identifier="confirmation-dialog">
+                <div class="titulo">Confirme seu pedido</div>
+                <div class="pedido">
+                    <div>
+                      <p class="nomePrato">text</p>
+                      <p class="precoPrato">455</p>
+                    </div>
+
+                    <div>
+                        <p class="nomeBebida">text</p>
+                        <p class="precoBebida">3434</p>
+                    </div>
+                    
+                    <div>
+                        <p class="nomeSobremesa">text</p>
+                        <p class="precoSobremesa">34243</p>  
+                    </div>
+
+                    <div>
+                        <p class="nomeTotal">TOTAL</p>
+                        <p class="valorTotal">3424</p>  
+                    </div>
+                </div>
+                <div class="confirmar " onclick="enviarPedido()" >Tudo certo, pode pedir!</div>
+                <div class="cancelar" onclick="cancelar()">Cancelar</div>
+
+
+            </div>
+
+        </section>
+
     </main>
     <footer>
-        <div class = "pedido" onclick="enviarPedido()">
+        <div class = "pedido" onclick="PedidoItens()">
             <p>Selecione os 3 itens</p>
             <p> para fechar o pedido </p>
         </div>
