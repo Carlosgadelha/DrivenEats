@@ -9,15 +9,17 @@ header{
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 1;
 }
 
 body{
 
     background-color: #E5E5E5;
     width: 414px;
+    /* margin: auto; */
     /*
     max-width: 500px;
-    margin: auto; */
+     */
 
 
 }
@@ -40,11 +42,14 @@ header p{
 section:first-of-type{
     margin-top: 123px;
 }
+section:last-of-type{
+    margin-bottom: 108px;
+}
 section{
     width: 395px;
     margin-left: 19px;
     margin-bottom: 27px;
-    background-color: yellow;
+
 }
 
 section h2{
@@ -61,7 +66,7 @@ section .produtos{
     width: 395px;
     overflow: hidden;
     overflow-x: scroll;
-    background-color: violet;
+
 
 }
 
@@ -73,13 +78,69 @@ section .produtos{
     justify-content: center;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
-    border-radius: 9px
+    border-radius: 9px;
+    position: relative;
+    
 
 }
 
-.produto div{
+.produto .infoProduto{
     margin: 18px 14px 13px  14px;
-    background-color: tomato;
+    
+
+}
+
+.produto div img{
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.produto div .nome{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333333;
+    
+}
+
+.produto div .descricao{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #A6A6A6;
+    margin-top: 8px;
+}
+
+.produto div .preco{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    margin-top: 9px;
+}
+.produto .iconSelecionado{
+    width: 15.44px;
+    height: 15.44px;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(50, 183, 47);
+    border-radius: 50%;
+    align-items:center;
+    justify-content: center;
+
+}
+.produto .iconSelecionado ion-icon{
+    display: block;
+    width: 15.44px;
+    height: 15.44px;
+    color: red;
 }
 
 footer{
