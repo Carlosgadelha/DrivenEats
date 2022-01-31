@@ -81,6 +81,7 @@ section .produtos{
     border-radius: 9px;
     position: relative;
     
+    
 
 }
 
@@ -143,6 +144,16 @@ section .produtos{
     color: red;
 }
 
+.selecionado{
+    
+    border: 5px solid rgba(50, 183, 47, 1);
+
+}
+
+.confirmarPedido{
+    background-color: #32B72F;
+}
+
 footer{
     width: 414px;
     height: 92px;
@@ -171,6 +182,17 @@ footer div p{
     display: block;
     font-family: Roboto;
     font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+footer .pedido{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
     text-align: center;
     color: #FFFFFF;
 }
